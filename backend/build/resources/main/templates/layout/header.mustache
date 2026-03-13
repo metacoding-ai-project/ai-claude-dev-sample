@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>블로그</title>
+</head>
+<body>
+<nav>
+    <a href="/posts">홈</a>
+    {{#loginUserId}}
+        <a href="/posts/new-form">글 작성</a>
+        <a href="/logout">로그아웃</a>
+    {{/loginUserId}}
+    {{^loginUserId}}
+        <a href="/login-form">로그인</a>
+        <a href="/join-form">회원가입</a>
+    {{/loginUserId}}
+</nav>
+<hr>

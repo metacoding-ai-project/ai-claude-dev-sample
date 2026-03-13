@@ -1,0 +1,11 @@
+{{> layout/header}}
+<h2>댓글 수정</h2>
+<form action="/posts/{{postId}}/comments/{{comment.id}}/edit" method="post">
+    <div>
+        <label>내용</label>
+        <textarea name="content" required>{{comment.content}}</textarea>
+    </div>
+    <button type="submit">수정</button>
+    <a href="/posts/{{postId}}">취소</a>
+</form>
+{{> layout/footer}}

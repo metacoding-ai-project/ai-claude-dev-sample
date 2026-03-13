@@ -1,0 +1,41 @@
+{{> layout/header}}
+<h2>{{post.title}}</h2>
+<p>작성자: {{post.username}}</p>
+<div>{{post.content}}</div>
+{{#post.image}}
+<img src="{{post.image}}" alt="대표 이미지">
+{{/post.image}}
+
+{{#isOwner}}
+<a href="/posts/{{post.id}}/edit-form">수정</a>
+<form action="/posts/{{post.id}}/delete" method="post" style="display:inline">
+    <button type="submit" onclick="return confirm('삭제하시겠습니까?')">삭제</button>
+</form>
+{{/isOwner}}
+
+<a href="/posts">목록으로</a>
+
+<hr>
+<h3>댓글</h3>
+{{#comments}}
+<div>
+    <span>{{username}}: {{content}}</span>
+    {{#isOwner}}
+    <a href="/posts/{{postId}}/comments/{{id}}/edit-form">수정</a>
+    <form action="/posts/{{postId}}/comments/{{id}}/delete" method="post" style="display:inline">
+        <button type="submit">삭제</button>
+    </form>
+    {{/isOwner}}
+</div>
+{{/comments}}
+{{^comments}}
+<p>댓글이 없습니다.</p>
+{{/comments}}
+
+{{#loginUserId}}
+<form action="/posts/{{postId}}/comments" method="post">
+    <textarea name="content" placeholder="댓글을 입력하세요" required></textarea>
+    <button type="submit">댓글 작성</button>
+</form>
+{{/loginUserId}}
+{{> layout/footer}}

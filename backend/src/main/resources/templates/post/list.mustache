@@ -1,0 +1,26 @@
+{{> layout/header}}
+<h2>게시글 목록</h2>
+<form action="/posts/search" method="get">
+    <input type="text" name="keyword" placeholder="제목 검색">
+    <button type="submit">검색</button>
+</form>
+{{#posts}}
+<div>
+    <a href="/posts/{{id}}">{{title}}</a>
+    <span>작성자: {{username}}</span>
+</div>
+{{/posts}}
+{{^posts}}
+<p>게시글이 없습니다.</p>
+{{/posts}}
+
+<div>
+    {{#hasPrev}}
+        <a href="/posts?page={{prevPage}}">이전</a>
+    {{/hasPrev}}
+    <span>{{pageNum}} / {{totalPages}}</span>
+    {{#hasNext}}
+        <a href="/posts?page={{nextPage}}">다음</a>
+    {{/hasNext}}
+</div>
+{{> layout/footer}}

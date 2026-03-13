@@ -1,0 +1,19 @@
+{{> layout/header}}
+<h2>글 작성</h2>
+<form action="/posts" method="post">
+    <div>
+        <label>제목</label>
+        <input type="text" name="title" required>
+    </div>
+    <div>
+        <label>내용</label>
+        <textarea name="content" required></textarea>
+    </div>
+    <div>
+        <label>이미지 경로 (선택)</label>
+        <input type="text" name="image">
+    </div>
+    <button type="submit">작성</button>
+    <a href="/posts">취소</a>
+</form>
+{{> layout/footer}}

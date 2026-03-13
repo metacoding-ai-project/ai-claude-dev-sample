@@ -1,0 +1,28 @@
+{{> layout/header}}
+<h2>"{{keyword}}" 검색 결과</h2>
+<form action="/posts/search" method="get">
+    <input type="text" name="keyword" value="{{keyword}}">
+    <button type="submit">검색</button>
+</form>
+
+{{#posts}}
+<div>
+    <a href="/posts/{{id}}">{{title}}</a>
+    <span>작성자: {{username}}</span>
+</div>
+{{/posts}}
+{{^posts}}
+<p>검색 결과가 없습니다.</p>
+{{/posts}}
+
+<div>
+    {{#hasPrev}}
+        <a href="/posts/search?keyword={{keyword}}&page={{prevPage}}">이전</a>
+    {{/hasPrev}}
+    <span>{{pageNum}} / {{totalPages}}</span>
+    {{#hasNext}}
+        <a href="/posts/search?keyword={{keyword}}&page={{nextPage}}">다음</a>
+    {{/hasNext}}
+</div>
+<a href="/posts">목록으로</a>
+{{> layout/footer}}
