@@ -1,0 +1,8 @@
+{"timestamp": "2026-03-13T14:49:24Z", "type": "agent", "description": "Create post new and edit mustache templates"}
+{"timestamp": "2026-03-13T14:49:20Z", "type": "agent", "description": "Create Post DTOs and layout templates"}
+{"timestamp": "2026-03-13T14:48:00Z", "type": "skill", "skill": "superpowers:subagent-driven-development"}
+{"timestamp": "2026-03-13T14:47:49Z", "type": "skill", "skill": "executing-plans"}
+{"timestamp": "2026-03-13T14:40:48Z", "type": "agent", "subagent": "Explore", "description": "Explore existing codebase structure"}
+{"timestamp": "2026-03-13T14:40:03Z", "type": "agent", "subagent": "Explore", "description": "Explore phases and TODO"}
+{"timestamp": "2026-03-13T14:39:16Z", "type": "skill", "skill": "superpowers:writing-plans"}
+{"timestamp": "2026-03-13T14:33:35Z", "type": "skill", "skill": "superpowers:systematic-debugging"}
